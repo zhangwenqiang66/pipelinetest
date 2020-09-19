@@ -1,22 +1,22 @@
 node(){
-    stage('构建'){
+    stage('����'){
         echo 'build'
     }
-   stage('测试'){
+   stage('����'){
         echo 'build'
-        bat 'robot   --pythonpath .  ../spj/tc'
+       
        
     }
-  stage('部署'){
+  stage('����'){
         echo 'deploy'
     }
-  stage('验收'){
+  stage('����'){
         echo 'build'
        mail bcc: '', body: '''<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${ENV, var="JOB_NAME"}-第${BUILD_NUMBER}次构建日志</title>
+<title>${ENV, var="JOB_NAME"}-�?{BUILD_NUMBER}次构建日�?/title>
 </head>
 
 <body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4" offset="0">
@@ -38,12 +38,12 @@ node(){
         <tr>   SVN_URL
             <td>
                 <ul>
-                    <li>项目名称：${PROJECT_NAME}</li>
-                    <li>SVN路径：${SVN_URL}</li>                    
-                    <li>构建编号：${BUILD_NUMBER}</li>                    
-                    <li>SVN版本：${SVN_REVISION}</li>
-                    <li>触发原因：${CAUSE}</li>   
-                    <li>构建日志：<a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
+                    <li>项目名称�?{PROJECT_NAME}</li>
+                    <li>SVN路径�?{SVN_URL}</li>                    
+                    <li>构建编号�?{BUILD_NUMBER}</li>                    
+                    <li>SVN版本�?{SVN_REVISION}</li>
+                    <li>触发原因�?{CAUSE}</li>   
+                    <li>构建日志�?a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
                 </ul>
             </td>
         </tr>
@@ -56,7 +56,7 @@ node(){
         <tr>
             <td>
                 <ul>
-                    <li>上次构建成功后变化 :  ${CHANGES_SINCE_LAST_SUCCESS}</a></li>
+                    <li>上次构建成功后变�?:  ${CHANGES_SINCE_LAST_SUCCESS}</a></li>
                 </ul>    
             </td>
         </tr>
@@ -77,7 +77,7 @@ node(){
         <tr>
             <td>
                 <ul>
-                    <li>变更集:${JELLY_SCRIPT,template="html"}</a></li>
+                    <li>变更�?${JELLY_SCRIPT,template="html"}</a></li>
                 </ul>    
             </td>
         </tr>
@@ -97,7 +97,7 @@ node(){
         
         <tr>
             <td>
-                <b><font color="#0B610B">构建日志 (最后 100行):</font></b>
+                <b><font color="#0B610B">构建日志 (最�?100�?:</font></b>
                 <hr size="2" width="100%" align="center" />
             </td>
         </tr>-->
