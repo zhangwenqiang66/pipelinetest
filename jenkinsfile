@@ -1,83 +1,83 @@
-node(){
-    stage('����'){
+node('Centos7'){
+    stage('¹¹½¨'){
         echo 'build'
     }
-   stage('����'){
+   stage('²âÊÔ'){
         echo 'build'
        
        
     }
-  stage('����'){
+  stage('²¿Êð'){
         echo 'deploy'
     }
-  stage('����'){
+  stage('½»¸¶'){
         echo 'build'
        mail bcc: '', body: '''<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${ENV, var="JOB_NAME"}-�?{BUILD_NUMBER}次构建日�?/title>
+<title>${ENV, var="JOB_NAME"}-ç¬?{BUILD_NUMBER}æ¬¡æž„å»ºæ—¥å¿?/title>
 </head>
 
 <body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4" offset="0">
     <table width="95%" cellpadding="0" cellspacing="0" style="font-size: 11pt; font-family: Tahoma, Arial, Helvetica, sans-serif">
         <tr>
-            <td>(本邮件由程序自动下发，请勿回复！)</td>
+            <td>(æœ¬é‚®ä»¶ç”±ç¨‹åºè‡ªåŠ¨ä¸‹å‘ï¼Œè¯·å‹¿å›žå¤ï¼)</td>
         </tr>
         <tr>
             <td>
-                <h2><font color="#FF0000">构建结果 - ${BUILD_STATUS}</font></h2>
+                <h2><font color="#FF0000">æž„å»ºç»“æžœ - ${BUILD_STATUS}</font></h2>
             </td>
         </tr>
         <tr>
             <td><br />
-                <b><font color="#0B610B">构建信息</font></b>
+                <b><font color="#0B610B">æž„å»ºä¿¡æ¯</font></b>
                 <hr size="2" width="100%" align="center" />
             </td>
         </tr>
         <tr>   SVN_URL
             <td>
                 <ul>
-                    <li>项目名称�?{PROJECT_NAME}</li>
-                    <li>SVN路径�?{SVN_URL}</li>                    
-                    <li>构建编号�?{BUILD_NUMBER}</li>                    
-                    <li>SVN版本�?{SVN_REVISION}</li>
-                    <li>触发原因�?{CAUSE}</li>   
-                    <li>构建日志�?a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
+                    <li>é¡¹ç›®åç§°ï¼?{PROJECT_NAME}</li>
+                    <li>SVNè·¯å¾„ï¼?{SVN_URL}</li>                    
+                    <li>æž„å»ºç¼–å·ï¼?{BUILD_NUMBER}</li>                    
+                    <li>SVNç‰ˆæœ¬ï¼?{SVN_REVISION}</li>
+                    <li>è§¦å‘åŽŸå› ï¼?{CAUSE}</li>   
+                    <li>æž„å»ºæ—¥å¿—ï¼?a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>
-                <b><font color="#0B610B">变更信息:</font></b>
+                <b><font color="#0B610B">å˜æ›´ä¿¡æ¯:</font></b>
                <hr size="2" width="100%" align="center" />
             </td>
         </tr>
         <tr>
             <td>
                 <ul>
-                    <li>上次构建成功后变�?:  ${CHANGES_SINCE_LAST_SUCCESS}</a></li>
+                    <li>ä¸Šæ¬¡æž„å»ºæˆåŠŸåŽå˜åŒ?:  ${CHANGES_SINCE_LAST_SUCCESS}</a></li>
                 </ul>    
             </td>
         </tr>
  <tr>
             <td>
                 <ul>
-                    <li>上次构建不稳定后变化 :  ${CHANGES_SINCE_LAST_UNSTABLE}</a></li>
+                    <li>ä¸Šæ¬¡æž„å»ºä¸ç¨³å®šåŽå˜åŒ– :  ${CHANGES_SINCE_LAST_UNSTABLE}</a></li>
                 </ul>    
             </td>
         </tr>
         <tr>
             <td>
                 <ul>
-                    <li>历史变更记录 : <a href="${PROJECT_URL}changes">${PROJECT_URL}changes</a></li>
+                    <li>åŽ†å²å˜æ›´è®°å½• : <a href="${PROJECT_URL}changes">${PROJECT_URL}changes</a></li>
                 </ul>    
             </td>
         </tr>
         <tr>
             <td>
                 <ul>
-                    <li>变更�?${JELLY_SCRIPT,template="html"}</a></li>
+                    <li>å˜æ›´é›?${JELLY_SCRIPT,template="html"}</a></li>
                 </ul>    
             </td>
         </tr>
@@ -97,7 +97,7 @@ node(){
         
         <tr>
             <td>
-                <b><font color="#0B610B">构建日志 (最�?100�?:</font></b>
+                <b><font color="#0B610B">æž„å»ºæ—¥å¿— (æœ€å?100è¡?:</font></b>
                 <hr size="2" width="100%" align="center" />
             </td>
         </tr>-->
@@ -119,7 +119,7 @@ node(){
     </table>
 
 </body>
-</html>''', cc: '', from: '754246835@qq.com', mimeType: 'text/html', replyTo: '', subject: '测试', to: '2147560144@qq.com'
+</html>''', cc: '', from: '754246835@qq.com', mimeType: 'text/html', replyTo: '', subject: 'æµ‹è¯•', to: '2147560144@qq.com'
     }
     
 }
